@@ -1,0 +1,20 @@
+{
+  "name": "meetmagento/example",
+  "description": "Example module to present the service layer of Magento 2",
+  "require": {
+    "magento/framework": "102.0.*",
+    "php": "~7.1.3||~7.2.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MeetMagento\\Example\\": ""
+    }
+  }
+}
