@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="MeetMagento\Example\Api\Data\EventInterface"
-                type="MeetMagento\Example\Model\Event"/>
+    <preference for="MeetMagento\Event\Api\Data\EventInterface"
+                type="MeetMagento\Event\Model\Event"/>
 
-    <preference for="MeetMagento\Example\Api\Data\EventSearchResultsInterface"
+    <preference for="MeetMagento\Event\Api\Data\EventSearchResultsInterface"
                 type="Magento\Framework\Api\SearchResults"/>
 
-    <preference for="MeetMagento\Example\Api\EventRepositoryInterface"
-                type="MeetMagento\Example\Model\EventRepository"/>
+    <preference for="MeetMagento\Event\Api\EventRepositoryInterface"
+                type="MeetMagento\Event\Model\EventRepository"/>
 
 </config>

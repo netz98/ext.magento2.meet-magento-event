@@ -2,36 +2,36 @@
 
 declare(strict_types=1);
 
-namespace MeetMagento\Example\Model;
+namespace MeetMagento\Event\Model;
 
 use Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use MeetMagento\Example\Api\Data\EventInterface;
-use MeetMagento\Example\Api\Data\EventSearchResultsInterfaceFactory;
-use MeetMagento\Example\Model\ResourceModel\Event as EventResource;
-use MeetMagento\Example\Model\ResourceModel\Event\CollectionFactory as EventCollectionFactory;
-use MeetMagento\Example\Api\EventRepositoryInterface;
+use MeetMagento\Event\Api\Data\EventInterface;
+use MeetMagento\Event\Api\Data\EventSearchResultsInterfaceFactory;
+use MeetMagento\Event\Model\ResourceModel\Event as EventResource;
+use MeetMagento\Event\Model\ResourceModel\Event\CollectionFactory as EventCollectionFactory;
+use MeetMagento\Event\Api\EventRepositoryInterface;
 
 /**
  * Class EventRepository
- * @package MeetMagento\Example\Model
+ * @package MeetMagento\Event\Model
  */
 class EventRepository implements EventRepositoryInterface
 {
     /**
-     * @var \MeetMagento\Example\Model\ResourceModel\Event\CollectionFactory
+     * @var \MeetMagento\Event\Model\ResourceModel\Event\CollectionFactory
      */
     private $eventCollectionFactory;
 
     /**
-     * @var \MeetMagento\Example\Model\ResourceModel\Event
+     * @var \MeetMagento\Event\Model\ResourceModel\Event
      */
     private $eventResource;
 
     /**
-     * @var \MeetMagento\Example\Model\EventFactory
+     * @var \MeetMagento\Event\Model\EventFactory
      */
     private $eventFactory;
 
@@ -41,17 +41,17 @@ class EventRepository implements EventRepositoryInterface
     private $collectionProcessor;
 
     /**
-     * @var \MeetMagento\Example\Api\Data\EventSearchResultsInterface
+     * @var \MeetMagento\Event\Api\Data\EventSearchResultsInterface
      */
     private $searchResultsFactory;
 
     /**
      * EventRepository constructor.
-     * @param \MeetMagento\Example\Model\ResourceModel\Event $eventResource
-     * @param \MeetMagento\Example\Model\EventFactory $eventFactory
-     * @param \MeetMagento\Example\Model\ResourceModel\Event\CollectionFactory $eventCollectionFactory
+     * @param \MeetMagento\Event\Model\ResourceModel\Event $eventResource
+     * @param \MeetMagento\Event\Model\EventFactory $eventFactory
+     * @param \MeetMagento\Event\Model\ResourceModel\Event\CollectionFactory $eventCollectionFactory
      * @param \Magento\Framework\Api\SearchCriteria\CollectionProcessorInterface $collectionProcessor
-     * @param \MeetMagento\Example\Api\Data\EventSearchResultsInterfaceFactory $searchResultsFactory
+     * @param \MeetMagento\Event\Api\Data\EventSearchResultsInterfaceFactory $searchResultsFactory
      */
     public function __construct(
         EventResource $eventResource,
@@ -70,8 +70,8 @@ class EventRepository implements EventRepositoryInterface
     /**
      * Save MeetMagento Event
      *
-     * @param \MeetMagento\Example\Api\Data\EventInterface $event
-     * @return \MeetMagento\Example\Api\Data\EventInterface
+     * @param \MeetMagento\Event\Api\Data\EventInterface $event
+     * @return \MeetMagento\Event\Api\Data\EventInterface
      * @throws \Magento\Framework\Exception\CouldNotSaveException
      */
     public function save(EventInterface $event): EventInterface
@@ -89,7 +89,7 @@ class EventRepository implements EventRepositoryInterface
      * Get MeetMagento Event
      *
      * @param int $eventId
-     * @return \MeetMagento\Example\Api\Data\EventInterface
+     * @return \MeetMagento\Event\Api\Data\EventInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function get($eventId): EventInterface
@@ -107,7 +107,7 @@ class EventRepository implements EventRepositoryInterface
     /**
      * Delete MeetMagento Event
      *
-     * @param \MeetMagento\Example\Api\Data\EventInterface $event
+     * @param \MeetMagento\Event\Api\Data\EventInterface $event
      * @return bool
      * @throws \Magento\Framework\Exception\CouldNotDeleteException
      */
@@ -139,16 +139,16 @@ class EventRepository implements EventRepositoryInterface
      * Get list of MeetMagento Events
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
-     * @return \MeetMagento\Example\Api\Data\EventSearchResultsInterface
+     * @return \MeetMagento\Event\Api\Data\EventSearchResultsInterface
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria)
     {
-        /** @var \MeetMagento\Example\Model\ResourceModel\Event\Collection $collection */
+        /** @var \MeetMagento\Event\Model\ResourceModel\Event\Collection $collection */
         $collection = $this->eventCollectionFactory->create();
 
         $this->collectionProcessor->process($searchCriteria, $collection);
 
-        /** @var \MeetMagento\Example\Api\Data\EventSearchResultsInterface $searchResults */
+        /** @var \MeetMagento\Event\Api\Data\EventSearchResultsInterface $searchResults */
         $searchResults = $this->searchResultsFactory->create();
         $searchResults->setSearchCriteria($searchCriteria);
         $searchResults->setItems($collection->getItems());

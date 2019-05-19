@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace MeetMagento\Example\Model\ResourceModel;
+namespace MeetMagento\Event\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
  * Class Event
- * @package MeetMagento\Example\Model\ResourceModel
+ * @package MeetMagento\Event\Model\ResourceModel
  */
 class Event extends AbstractDb
 {

@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace MeetMagento\Example\Api\Data;
+namespace MeetMagento\Event\Api\Data;
 
 use Magento\Framework\Api\SearchResultsInterface;
 
 /**
  * Interface EventSearchResultsInterface
- * @package MeetMagento\Example\Api\Data
+ * @package MeetMagento\Event\Api\Data
  */
 interface EventSearchResultsInterface extends SearchResultsInterface
 {
     /**
      * Get items list.
      *
-     * @return \MeetMagento\Example\Api\Data\EventInterface[]
+     * @return \MeetMagento\Event\Api\Data\EventInterface[]
      */
     public function getItems();
 
     /**
      * Set items list.
      *
-     * @param \MeetMagento\Example\Api\Data\EventInterface[] $items
+     * @param \MeetMagento\Event\Api\Data\EventInterface[] $items
      * @return $this
      */
     public function setItems(array $items);

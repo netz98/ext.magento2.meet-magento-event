@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace MeetMagento\Example\Api;
+namespace MeetMagento\Event\Api;
 
-use MeetMagento\Example\Api\Data\EventInterface;
+use MeetMagento\Event\Api\Data\EventInterface;
 
 /**
  * Interface EventRepositoryInterface
- * @package MeetMagento\Example\Api
+ * @package MeetMagento\Event\Api
  */
 interface EventRepositoryInterface
 {
     /**
      * Save MeetMagento Event
      *
-     * @param \MeetMagento\Example\Api\Data\EventInterface $event
-     * @return \MeetMagento\Example\Api\Data\EventInterface
+     * @param \MeetMagento\Event\Api\Data\EventInterface $event
+     * @return \MeetMagento\Event\Api\Data\EventInterface
      * @throws \Magento\Framework\Exception\CouldNotSaveException
      */
     public function save(EventInterface $event): EventInterface;
@@ -25,7 +25,7 @@ interface EventRepositoryInterface
      * Get MeetMagento Event
      *
      * @param int $eventId
-     * @return \MeetMagento\Example\Api\Data\EventInterface
+     * @return \MeetMagento\Event\Api\Data\EventInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function get($eventId): EventInterface;
@@ -56,7 +56,7 @@ interface EventRepositoryInterface
      * Get list of MeetMagento Events
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
-     * @return \MeetMagento\Example\Api\Data\EventSearchResultsInterface
+     * @return \MeetMagento\Event\Api\Data\EventSearchResultsInterface
      */
     public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);
 }

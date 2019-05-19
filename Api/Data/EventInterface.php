@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MeetMagento\Example\Api\Data;
+namespace MeetMagento\Event\Api\Data;
 
 /**
  * Interface EventInterface
- * @package MeetMagento\Example\Api\Data
+ * @package MeetMagento\Event\Api\Data
  */
 interface EventInterface
 {
