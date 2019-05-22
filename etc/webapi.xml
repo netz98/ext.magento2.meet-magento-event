@@ -4,25 +4,25 @@
     <route method="GET" url="/V1/meet-magento/events">
         <service class="MeetMagento\Event\Api\EventRepositoryInterface" method="getList"/>
         <resources>
-            <resource ref="anonymous"/>
+            <resource ref="MeetMagento_Event::view"/>
         </resources>
     </route>
     <route method="GET" url="/V1/meet-magento/events/:eventId">
         <service class="MeetMagento\Event\Api\EventRepositoryInterface" method="get"/>
         <resources>
-            <resource ref="anonymous"/>
+            <resource ref="MeetMagento_Event::view"/>
         </resources>
     </route>
     <route method="POST" url="/V1/meet-magento/events">
         <service class="MeetMagento\Event\Api\EventRepositoryInterface" method="save"/>
         <resources>
-            <resource ref="anonymous"/>
+            <resource ref="MeetMagento_Event::edit"/>
         </resources>
     </route>
     <route method="PUT" url="/V1/meet-magento/events/:eventId">
         <service class="MeetMagento\Event\Api\EventRepositoryInterface" method="save"/>
         <resources>
-            <resource ref="anonymous"/>
+            <resource ref="MeetMagento_Event::edit"/>
         </resources>
     </route>
 </routes>

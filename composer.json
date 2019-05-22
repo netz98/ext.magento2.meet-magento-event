@@ -1,5 +1,5 @@
 {
-  "name": "meetmagento/example",
+  "name": "meetmagento/event",
   "description": "Example module to present the service layer of Magento 2",
   "require": {
     "magento/framework": "102.0.*",
@@ -14,7 +14,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "MeetMagento\\Example\\": ""
+      "MeetMagento\\Event\\": ""
     }
   }
 }

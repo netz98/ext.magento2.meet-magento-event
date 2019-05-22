@@ -2,4 +2,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'MeetMagento_Example', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'MeetMagento_Event', __DIR__);

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="MeetMagento_Event::event" title="Event" translate="title" sortOrder="10">
+                    <resource id="MeetMagento_Event::edit" title="Edit Event" translate="title" sortOrder="10"/>
+                    <resource id="MeetMagento_Event::view" title="View Event" translate="title" sortOrder="20"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
